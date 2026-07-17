@@ -1,0 +1,56 @@
+{
+  "name": "forge-icon",
+  "version": "0.1.0",
+  "description": "A free, open-source, tree-shakeable SVG icon library for React.",
+  "license": "MIT",
+  "author": "",
+  "homepage": "https://github.com/your-org/forge-icon#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/forge-icon.git"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "svg",
+    "icon-library",
+    "forge-icon"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./icons/*": {
+      "types": "./dist/icons/*.d.ts",
+      "import": "./dist/icons/*.js",
+      "require": "./dist/icons/*.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "generate": "node ./scripts/generate.mjs",
+    "build": "npm run generate && tsup",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "react": "^18.3.1",
+    "svgo": "^3.3.2",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  }
+}
