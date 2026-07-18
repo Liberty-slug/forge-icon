@@ -1,13 +1,13 @@
 {
   "name": "forge-icon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A free, open-source, tree-shakeable SVG icon library for React.",
   "license": "MIT",
   "author": "",
-  "homepage": "https://github.com/your-org/forge-icon#readme",
+  "homepage": "https://github.com/liberty-slug/forge-icon#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/forge-icon.git"
+    "url": "git+https://github.com/liberty-slug/forge-icon.git"
   },
   "keywords": [
     "react",
