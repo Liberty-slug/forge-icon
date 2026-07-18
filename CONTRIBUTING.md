@@ -7,7 +7,7 @@
 
    ```js
    {
-     name: "arrow-up-right",       // kebab-case, becomes ArrowUpRightIcon
+     name: "arrow-up-right",      
      tags: ["diagonal", "external"],
      svg: `<line x1="7" y1="17" x2="17" y2="7" />
    <polyline points="9 7 17 7 17 15" />`,

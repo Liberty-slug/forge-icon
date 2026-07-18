@@ -1,11 +1,3 @@
-#!/usr/bin/env node
-// Generates:
-//   icons-svg/<name>.svg      -- standalone SVG source, for non-React consumers / previews
-//   src/icons/<PascalName>.tsx -- React component wrapping IconBase
-//   src/index.ts               -- barrel file exporting every icon
-//
-// Run via `npm run generate`. This is idempotent -- it fully regenerates the
-// output directories from scripts/icon-defs.mjs each time.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -45,7 +37,6 @@ function buildStandaloneSvg(inner) {
         params: {
           overrides: {
             removeViewBox: false,
-            // Keep stroke/fill attributes -- this is a stroke-based icon set.
             removeUselessStrokeAndFill: false,
           },
         },
@@ -82,7 +73,6 @@ function main() {
   fs.mkdirSync(svgOutDir, { recursive: true });
   fs.mkdirSync(componentOutDir, { recursive: true });
 
-  // Clear previously generated files so renamed/removed icons don't linger.
   for (const dir of [svgOutDir, componentOutDir]) {
     for (const file of fs.readdirSync(dir)) {
       fs.rmSync(path.join(dir, file));
